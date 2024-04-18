@@ -1,5 +1,11 @@
 # showdown-mathjax
 
+## 1.0.2
+
+### Patch Changes
+
+- Changing git url.
+
 ## 1.0.1
 
 ### Patch Changes
