@@ -268,11 +268,11 @@ node ./index.js
 
 #### Output
 
-![TeX](./public/TeX.png)
+![TeX](https://imagedelivery.net/6bSk6wUa9UOwEesJAZQuoA/0d94a865-225d-4599-2eeb-5605350d5900/public)
 
 <br>
 
-![MathMl](./public/MathMl.png)
+![MathMl](https://imagedelivery.net/6bSk6wUa9UOwEesJAZQuoA/82756c46-b74d-4238-6c24-372415ca3000/public)
 
 ---
 
