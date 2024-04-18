@@ -1,0 +1,32 @@
+{
+  "name": "showdown-mathjax",
+  "version": "0.1.0",
+  "description": "Showdown Extensions for mathjax",
+  "scripts": {
+    "build": "tsup"
+  },
+  "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "author": "Pho Thin Maung",
+  "license": "Apache-2.0",
+  "keywords": [
+    "Markdown",
+    "Showdown",
+    "MathJax"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phothinmg/mm-mark.git"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@types/node": "^20.10.5",
+    "@types/showdown": "^2.0.6",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "showdown": "^2.1.0"
+  }
+}
