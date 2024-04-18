@@ -38,36 +38,63 @@ function ShowdownMathjax(): ShowdownExtension[] {
       type: "output",
       filter: (text: string) => {
         const scriptTag = `
-          <script>
-          window.MathJax = {
-            tex: {
-              packages: ['base'],        // extensions to use
-              inlineMath: [              // start/end delimiter pairs for in-line math
-                ['\\(', '\\)']
-              ],
-              displayMath: [             // start/end delimiter pairs for display math
-                ['$$', '$$'],
-                ['\\[', '\\]']
-              ],
-              processEscapes: true,      // use \$ to produce a literal dollar sign
-              processEnvironments: true, // process \begin{xxx}...\end{xxx} outside math mode
-              processRefs: true,         // process \ref{...} outside of math mode
-              digits: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/,
-                                         // pattern for recognizing numbers
-              tags: 'none',              // or 'ams' or 'all'
-              tagSide: 'right',          // side for \tag macros
-              tagIndent: '0.8em',        // amount to indent tags
-              useLabelIds: true,         // use label name rather than tag for ids
-              maxMacros: 10000,          // maximum number of macro substitutions per expression
-              maxBuffer: 5 * 1024,       // maximum size for the internal TeX string (5K)
-              baseURL:                   // URL for use with links to tags (when there is a <base> tag in effect)
-                 (document.getElementsByTagName('base').length === 0) ?
-                  '' : String(document.location).replace(/#.*$/, '')),
-              formatError:               // function called when TeX syntax errors occur
-                  (jax, err) => jax.formatError(err)
+        <script>
+            window.MathJax = {
+              loader: {
+                load: [
+                  '[tex]/color', 
+                  '[tex]/mathtools', 
+                  '[tex]/ams',
+                  '[tex]/html', 
+                  '[tex]/textmacros', 
+                  '[tex]/textcomp' ,
+                  '[mml]/mml3',
+                ]
+              },
+              tex: {
+                packages: {
+                  '[+]': [
+                    'color', 
+                    'mathtools', 
+                    'ams', 
+                    'html',
+                    'textmacros' 
+                  ]
+                },        
+                inlineMath: [  
+                  ['$','$'],    
+                  ['\(', '\)']
+                ],
+                displayMath: [             
+                  ['$$', '$$'],
+                  ['\[', '\]']
+                ],
+                color: {
+                  padding: '5px',
+                  borderWidth: '2px'
+                },
+                ams: {
+                  multlineWidth: '100%',
+                  multlineIndent: '1em'
+                },
+                processEscapes: true,      
+                processEnvironments: true, 
+                processRefs: true,         
+                digits: /^(?:[0-9]+(?:{,}[0-9]{3})*(?:.[0-9]*)?|.[0-9]+)/,
+                tags: 'none',              
+                tagSide: 'right',          
+                tagIndent: '0.8em',        
+                useLabelIds: true,         
+                maxMacros: 10000,          
+                maxBuffer: 5 * 1024,       
+                baseURL: (document.getElementsByTagName('base').length === 0) ? '' : String(document.location).replace(/#.*$/, ''),
+                formatError: (jax, err) => jax.formatError(err)
+              },
+              textmacros: {
+                packages: {'[+]': ['textcomp']}
+              }
             }
-          }
-          </script>
+        </script>
           <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
           <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         `;
