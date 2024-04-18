@@ -17,7 +17,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/phothinmg/mm-mark.git"
+    "url": "git+https://github.com/phothinmg/showdown-mathjax.git"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
