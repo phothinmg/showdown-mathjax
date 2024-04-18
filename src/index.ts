@@ -1,3 +1,10 @@
+/* 
+Showdown Extensions for mathjax
+@ 2024 Pho Thin Maung , https://github.com/phothinmg/showdown-mathjax
+This extension was inspired by https://github.com/easyhappy/math-extension.
+*/
+
+
 import Showdown, { ShowdownExtension } from "showdown";
 
 function ShowdownMathjax(): ShowdownExtension[] {

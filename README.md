@@ -4,6 +4,8 @@
 
 ### Showdown Extension for MathJax 
 
+***This extension was inspired by https://github.com/easyhappy/math-extension.***
+
 ---
 
 #### Install
@@ -24,12 +26,18 @@ yarn add showdown-mathjax
 
 #### About
 
-Showdown extension for MathJax , support `TeX / LaTeX` and `MathML`.
+- [Showdown](https://showdownjs.com/) : A Markdown to HTML bidirectional converter written in Javascript!
+
+- [MathJax](https://www.mathjax.org/) : A JavaScript display engine for mathematics that works in all browsers.
+
+- Showdown-mathjax is showdown extension for MathJax ,  `TeX / LaTeX` and `MathML` are supported.
+
 
 
 ##### TeX / LaTeX
 
- - Supported TeX / LaTeX commands from MathJax website can see here : https://docs.mathjax.org/en/latest/input/tex/macros/index.html
+
+- Supported TeX / LaTeX commands from MathJax website can see here : https://docs.mathjax.org/en/latest/input/tex/macros/index.html
 
 - TeX commands available in MathJax by [Dr. Carol JVF Burns](https://www.onemathematicalcat.org/carol_vita_web.htm) , can see here : https://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm
 
@@ -45,7 +53,50 @@ Showdown extension for MathJax , support `TeX / LaTeX` and `MathML`.
 
 ---
 
+#### Documentations 
+
+***The documentation is being developed and will be available soon.***
+
+---
+
 #### Example Usage
+
+
+`index.js`
+
+```javascript
+import fs from "fs";
+import Showdown from "showdown";
+import ShowdownMathjax from "showdown-mathjax";
+
+const converter = new Showdown.Converter({
+    // others showdown options
+  extensions: [ShowdownMathjax, /*others showdown extensions*/],
+});
+
+const content = fs.readFileSync("./example.md", "utf-8");
+
+const converted = converter.makeHtml(content);
+
+const html = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showdown-MathJax</title>
+</head>
+<body>
+    ${converted}
+</body>
+</html>
+
+`;
+
+fs.writeFileSync("index.html", html);
+
+```
+
 
 `example.md`
 
@@ -207,42 +258,6 @@ $$
   </mrow>
 </math>
 
-
-```
-
-
-`index.js`
-
-```javascript
-import fs from "fs";
-import Showdown from "showdown";
-import ShowdownMathjax from "showdown-mathjax";
-
-const converter = new Showdown.Converter({
-    // others showdown options
-  extensions: [ShowdownMathjax, /*others showdown extensions*/],
-});
-
-const content = fs.readFileSync("./example.md", "utf-8");
-
-const converted = converter.makeHtml(content);
-
-const html = `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Showdown-MathJax</title>
-</head>
-<body>
-    ${converted}
-</body>
-</html>
-
-`;
-
-fs.writeFileSync("index.html", html);
 
 ```
 
