@@ -1,5 +1,11 @@
 # showdown-mathjax
 
+## 1.0.1
+
+### Patch Changes
+
+- Add output fotos to cloudfair image
+
 ## 1.0.0
 
 ### Major Changes

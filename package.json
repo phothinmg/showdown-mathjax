@@ -1,6 +1,6 @@
 {
   "name": "showdown-mathjax",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Showdown Extensions for mathjax",
   "scripts": {
     "build": "tsup"
