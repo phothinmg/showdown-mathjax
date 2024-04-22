@@ -7,7 +7,7 @@ This extension was inspired by https://github.com/easyhappy/math-extension.
 
 import Showdown, { ShowdownExtension } from "showdown";
 
-function ShowdownMathjax(): ShowdownExtension[] {
+function showdownMathjax(): ShowdownExtension[] {
   const ext: ShowdownExtension[] = [
     {
       type: "lang",
@@ -131,6 +131,6 @@ function decode(text: string) {
   }
 }
 
-Showdown.extension("ShowdownMathjax", ShowdownMathjax);
+Showdown.extension("showdownMathjax", showdownMathjax);
 
-export default ShowdownMathjax;
+export default showdownMathjax;

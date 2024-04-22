@@ -67,11 +67,11 @@ yarn add showdown-mathjax
 ```javascript
 import fs from "fs";
 import Showdown from "showdown";
-import ShowdownMathjax from "showdown-mathjax";
+import showdownMathjax from "showdown-mathjax";
 
 const converter = new Showdown.Converter({
     // others showdown options
-  extensions: [ShowdownMathjax, /*others showdown extensions*/],
+  extensions: [showdownMathjax, /*others showdown extensions*/],
 });
 
 const content = fs.readFileSync("./example.md", "utf-8");
