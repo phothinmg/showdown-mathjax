@@ -1,5 +1,11 @@
 # showdown-mathjax
 
+## 1.0.3
+
+### Patch Changes
+
+- Add CJS
+
 ## 1.0.2
 
 ### Patch Changes
