@@ -4,7 +4,6 @@ Showdown Extensions for mathjax
 This extension was inspired by https://github.com/easyhappy/math-extension.
 */
 
-
 import Showdown, { ShowdownExtension } from "showdown";
 
 function showdownMathjax(): ShowdownExtension[] {
@@ -131,6 +130,8 @@ function decode(text: string) {
   }
 }
 
-Showdown.extension("showdownMathjax", showdownMathjax);
+Showdown.extension("showdownMathjax", showdownMathjax());
 
-export default showdownMathjax;
+// export default showdownMathjax;
+
+module.exports = showdownMathjax;
