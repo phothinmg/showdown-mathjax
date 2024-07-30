@@ -1,5 +1,12 @@
 # showdown-mathjax
 
+## 1.0.5
+
+### Patch Changes
+
+- update math jax
+- update math jax
+
 ## 1.0.4
 
 ### Patch Changes
