@@ -101,8 +101,7 @@ function showdownMathjax(): ShowdownExtension[] {
               }
             }
         </script>
-          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-          <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         `;
         return scriptTag + text;
       },
@@ -132,6 +131,6 @@ function decode(text: string) {
 
 Showdown.extension("showdownMathjax", showdownMathjax());
 
-// export default showdownMathjax;
+export default showdownMathjax;
 
-module.exports = showdownMathjax;
+// module.exports = showdownMathjax;
