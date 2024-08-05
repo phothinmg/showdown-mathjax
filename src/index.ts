@@ -45,63 +45,13 @@ function showdownMathjax(): ShowdownExtension[] {
       filter: (text: string) => {
         const scriptTag = `
         <script>
-            window.MathJax = {
-              loader: {
-                load: [
-                  '[tex]/color', 
-                  '[tex]/mathtools', 
-                  '[tex]/ams',
-                  '[tex]/html', 
-                  '[tex]/textmacros', 
-                  '[tex]/textcomp' ,
-                  '[mml]/mml3',
-                ]
-              },
-              tex: {
-                packages: {
-                  '[+]': [
-                    'color', 
-                    'mathtools', 
-                    'ams', 
-                    'html',
-                    'textmacros' 
-                  ]
-                },        
-                inlineMath: [  
-                  ['$','$'],    
-                  ['\(', '\)']
-                ],
-                displayMath: [             
-                  ['$$', '$$'],
-                  ['\[', '\]']
-                ],
-                color: {
-                  padding: '5px',
-                  borderWidth: '2px'
-                },
-                ams: {
-                  multlineWidth: '100%',
-                  multlineIndent: '1em'
-                },
-                processEscapes: true,      
-                processEnvironments: true, 
-                processRefs: true,         
-                digits: /^(?:[0-9]+(?:{,}[0-9]{3})*(?:.[0-9]*)?|.[0-9]+)/,
-                tags: 'none',              
-                tagSide: 'right',          
-                tagIndent: '0.8em',        
-                useLabelIds: true,         
-                maxMacros: 10000,          
-                maxBuffer: 5 * 1024,       
-                baseURL: (document.getElementsByTagName('base').length === 0) ? '' : String(document.location).replace(/#.*$/, ''),
-                formatError: (jax, err) => jax.formatError(err)
-              },
-              textmacros: {
-                packages: {'[+]': ['textcomp']}
-              }
-            }
+          var script = document.createElement("script");
+          script.id = "MathJax-script";
+          script.async = true;
+          script.src =
+            "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js";
+          document.head.appendChild(script);
         </script>
-         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         `;
         return scriptTag + text;
       },
